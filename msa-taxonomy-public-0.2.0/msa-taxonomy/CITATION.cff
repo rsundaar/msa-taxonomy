@@ -6,11 +6,11 @@ authors:
   - family-names: Sundaar
     given-names: Ravi
     affiliation: "Sahai LLC"
-    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add once registered
+    orcid: "https://orcid.org/0009-0001-7704-4111"   # add once registered
 version: 0.2.0
 date-released: 2026-08-19
 license: CC-BY-4.0
-repository-code: "https://github.com/REPLACE-ME/msa-taxonomy"
+repository-code: "https://github.com/rsundaar/msa-taxonomy"
 # doi: "10.5281/zenodo.REPLACE-ME"   # Zenodo mints this on first release; add it, then re-tag
 abstract: >-
   A versioned, machine-readable taxonomy of the manipulation tactics used in

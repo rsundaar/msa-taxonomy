@@ -1,0 +1,24 @@
+id: sig.narrative.pull_your_own_permits
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: usnews_contractor_red_flags_2026
+  ref: https://realestate.usnews.com/real-estate/articles/home-improvement-contractor-scams-the-red-flags-to-watch-for
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Telling the homeowner to pull the building permits themselves is a standard sign the
+    contractor is unlicensed or trying to stay off the town's radar.
+name: Tells the homeowner to pull the building permits themselves
+detection_mode:
+- verbal
+severity: medium
+grounding: theory
+mechanisms:
+- mech.dishonesty_appeal
+short_rationale: A licensed contractor normally pulls their own permits as part of the job.
+  Asking the homeowner to do it instead is a common way an unlicensed or uninsured contractor
+  avoids being tied to the work or being checked against a license registry.
+natural_probes:
+- Did they ask you to get the building permit yourself instead of them getting it?
+- Have they shown you a contractor's license number?

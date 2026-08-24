@@ -1,0 +1,30 @@
+id: sig.narrative.debt_of_the_deceased
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: aarp_bereavement_scams_2026
+  ref: https://www.aarp.org/money/scams-fraud/funeral-bereavement/
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Debt-of-the-deceased collection is the archetype family's core tell. A caller claims
+    the family or survivor personally owes a debt that was actually the deceased's alone.
+- source: fbi_elpaso_bereavement_scams_2026
+  ref: https://www.fbi.gov/contact-us/field-offices/elpaso/news/press-releases/fbi-el-paso-warns-about-scams-that-are-targeting-the-deceased-and-their-grieving-families-bereavement-scams
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: corroborating FBI advisory on bereavement-targeted debt collection scams
+name: Claims a surviving family member personally owes the deceased's debt
+detection_mode:
+- verbal
+severity: high
+grounding: theory
+mechanisms:
+- mech.authority
+- mech.dishonesty_appeal
+short_rationale: A deceased person's debts are owed by their estate, not by their surviving
+  spouse, children, or other relatives personally (with narrow exceptions like joint accounts).
+  A caller pressuring a grieving family member to pay "what is owed" is exploiting grief and
+  unfamiliarity with the law.
+natural_probes:
+- Did they say you personally owe money because of your (spouse's/relative's) passing?
+- Did they call soon after the passing, before you'd even had a chance to settle things?

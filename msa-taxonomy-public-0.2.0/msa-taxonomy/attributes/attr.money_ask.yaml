@@ -1,0 +1,35 @@
+id: attr.money_ask
+kind: attribute
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_evidence.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: migrated from the hand-coded L1 evidence matrix (seed v0)
+- source: abc_news_crypto_atm_2025
+  ref: https://abcnews.com/US/scammers-notched-333-million-bitcoin-atm-scams-2025/story?id=128526877
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Added the crypto_atm and fee_to_withdraw values. Additive; existing values unchanged.
+    These correspond to sig.payment.crypto_atm and sig.payment.fee_to_withdraw.
+attribute_id: money_ask
+order: 2
+severity: critical
+role: decisive_positive
+values:
+- none
+- payment
+- gift_cards
+- crypto
+- crypto_atm
+- fee_to_withdraw
+- wire
+- account_or_card_info
+- unknown
+multi: false
+describe: what payment or financial information they want; gift_cards / crypto / wire / account_or_card_info
+  are the strong ones. crypto_atm = directed to deposit cash into a crypto ATM/kiosk.
+  fee_to_withdraw = told to pay a fee/tax before withdrawing their own money
+  from an investment platform.
+probe: Did they ask you to pay, or to share any account or card details?

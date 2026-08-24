@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sahai-knowledge/envelope.schema.json",
+  "title": "Entity envelope",
+  "description": "Shared fields carried by every knowledge entity. Entities are deprecated, never deleted: version_deprecated is set, the file stays.",
+  "type": "object",
+  "required": ["id", "kind", "version_added", "preview", "provenance"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(mech|sig|arch|attr|src|phr)\\.[a-z0-9_.]+$",
+      "description": "Stable, namespaced id. Never reused after retirement."
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["mechanism", "signal", "archetype", "attribute", "source", "phrasing"]
+    },
+    "version_added": {"type": "string", "pattern": "^\\d+\\.\\d+(\\.\\d+)?$"},
+    "version_deprecated": {
+      "anyOf": [
+        {"type": "null"},
+        {"type": "string", "pattern": "^\\d+\\.\\d+(\\.\\d+)?$"}
+      ]
+    },
+    "preview": {
+      "type": "boolean",
+      "description": "true = shadow-only; cannot affect a production verdict."
+    },
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source", "ref"],
+        "properties": {
+          "source": {"type": "string"},
+          "ref": {"type": "string"},
+          "retrieved_at": {"type": "string"},
+          "note": {"type": "string"}
+        }
+      }
+    }
+  }
+}

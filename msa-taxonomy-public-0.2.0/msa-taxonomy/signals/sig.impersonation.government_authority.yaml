@@ -1,0 +1,25 @@
+id: sig.impersonation.government_authority
+kind: signal
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_patterns.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: migrated from the MSA pattern library (seed v0)
+name: Caller or message claims to be a government agency
+detection_mode:
+- verbal
+- artifact
+severity: high
+grounding: theory
+mechanisms:
+- mech.authority
+short_rationale: Government offices (IRS, Social Security, Medicare, the courts, the police)
+  start contact by mail, not a surprise call, text, or email demanding action. An agency reaching
+  out out of the blue and pressing for money or information is itself a warning sign.
+natural_probes:
+- Who did they say they were from — the IRS, Social Security, Medicare, the police?
+- Did they call, text, or email you out of the blue, or had you reached out to them first?
+- Have you had any letter in the mail about this beforehand?

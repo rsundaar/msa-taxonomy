@@ -1,0 +1,25 @@
+id: sig.sender.spf_dkim_dmarc_fail
+kind: signal
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_patterns.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: migrated from the MSA pattern library (seed v0)
+name: Email failed sender authentication
+detection_mode:
+- artifact_only
+severity: high
+grounding: operational
+mechanisms: []
+short_rationale: Legitimate institutional senders pass SPF/DKIM/DMARC. Failures are not always
+  fraud but are strong indicators when combined with other signals.
+natural_probes: []
+detector: email_auth_check
+artifact_evaluation: 'Parse email headers; check Authentication-Results header for
+
+  SPF, DKIM, DMARC results. ''fail'' or ''softfail'' on any is a flag;
+
+  ''fail'' on DMARC for a known brand is critical.'

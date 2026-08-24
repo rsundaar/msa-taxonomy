@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sahai-knowledge/archetype.schema.json",
+  "title": "Scam archetype (MSA Level 3)",
+  "type": "object",
+  "required": ["name", "canonical_signals", "crosswalk", "narrative", "response_template"],
+  "properties": {
+    "kind": {"const": "archetype"},
+    "name": {"type": "string", "minLength": 1},
+    "canonical_signals": {
+      "type": "object",
+      "required": ["verbal", "artifact"],
+      "properties": {
+        "verbal": {"type": "array", "items": {"type": "string", "pattern": "^sig\\."}},
+        "artifact": {"type": "array", "items": {"type": "string", "pattern": "^sig\\."}}
+      }
+    },
+    "crosswalk": {
+      "type": "object",
+      "required": ["ftc", "ic3"],
+      "properties": {
+        "ftc": {"anyOf": [{"type": "null"}, {"type": "string"}]},
+        "ic3": {"anyOf": [{"type": "null"}, {"type": "string"}]},
+        "apwg": {"anyOf": [{"type": "null"}, {"type": "string"}]}
+      },
+      "description": "Operational-category mapping (governance requires FTC/IC3/APWG placement for every archetype)."
+    },
+    "typical_descriptions": {"type": "array", "items": {"type": "string"}},
+    "narrative": {"type": "string", "minLength": 1},
+    "response_template": {"type": "string", "minLength": 1},
+    "forward_recommended_when": {"type": "array", "items": {"type": "string"}},
+    "escalation": {"type": "object"}
+  }
+}

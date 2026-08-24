@@ -1,0 +1,67 @@
+id: arch.tech_support_popup
+kind: archetype
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: ic3_tech_support_gov_impersonation_2026
+  ref: https://www.ic3.gov/crimeinfo/techsupportgovimpersonation
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: 'The leading tech-support entry point: a browser pop-up with an alarm, a phone number,
+    and a "do not shut down" instruction. Loss category $1.04B (IC3 2025).'
+name: Tech-support pop-up scam
+canonical_signals:
+  verbal:
+  - sig.narrative.popup_lockout_claim
+  artifact:
+  - sig.detector.tech_support_scam
+crosswalk:
+  ftc: null
+  ic3: Tech Support Fraud
+  apwg: null
+typical_descriptions:
+- my computer screen froze and a number came up to call Microsoft
+- a warning popped up saying my computer was infected with a virus
+- it said not to shut down my computer and to call this number right away
+- I called the number on the screen and they said they needed to fix my computer
+narrative: 'A browser pop-up claims the computer is infected, hacked, or
+
+  locked, shows an alarming warning, gives a phone number to call, and often
+
+  instructs the user not to restart or shut down the computer. This is a
+
+  fake webpage designed to look like a system alert — it is not a real
+
+  message from Microsoft, Apple, or any security company. Calling the
+
+  number connects to a scammer who will ask for remote access to "fix" the
+
+  problem, which is the entry point into further exploitation (including
+
+  the phantom-hacker chain).'
+response_template: 'That pop-up is not a real message from Microsoft, Apple,
+
+  or any security company — it''s a fake webpage designed to alarm you into
+
+  calling a number.
+
+
+  Please close the browser window (or restart the computer if you can''t
+
+  close it) and do not call that number or let anyone remotely access your
+
+  computer. If you already called and gave anyone access, let''s
+
+  disconnect the computer from the internet and change your important
+
+  passwords from a different device.
+
+
+  If a real problem ever comes up with your computer, we can call the
+
+  store or company where you bought it, on a number you already trust.'
+forward_recommended_when: []
+escalation:
+  caregiver_notify: urgent
+  cross_channel_correlate: true
+  log_as: tech_support_popup_attempt

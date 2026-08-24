@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sahai-knowledge/source.schema.json",
+  "title": "Impersonated-source legitimacy rule",
+  "description": "An institution scammers impersonate, plus the channels a real one never uses to initiate contact. Only encode rules published by the source or the FTC.",
+  "type": "object",
+  "required": ["label", "aliases", "never_channels"],
+  "properties": {
+    "kind": {"const": "source"},
+    "label": {"type": "string", "minLength": 1},
+    "aliases": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "never_channels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"enum": ["phone", "email", "text", "mail", "in_person", "social"]}
+    }
+  }
+}

@@ -1,0 +1,15 @@
+id: mech.authority
+kind: mechanism
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_patterns.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: 'theory-derived (cialdini: cialdini.authority); bibliography in documents/papers/triage_patterns_references.md'
+name: Authority
+theory: cialdini
+source_principle: cialdini.authority
+description: 'Compliance because the requester claims a role that is normally obeyed or trusted:
+  a government agency, a bank officer, a known loved one''s voice.'

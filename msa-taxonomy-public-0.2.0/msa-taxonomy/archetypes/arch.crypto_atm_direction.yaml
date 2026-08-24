@@ -1,0 +1,69 @@
+id: arch.crypto_atm_direction
+kind: archetype
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: abc_news_crypto_atm_2025
+  ref: https://abcnews.com/US/scammers-notched-333-million-bitcoin-atm-scams-2025/story?id=128526877
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: $333-389M in 2025 crypto-ATM losses, 76% of losses from victims aged 60+.
+- source: cointelegraph_crypto_atm_older_adults_2026
+  ref: https://cointelegraph.com/learn/crypto-atm-scams-older-adults
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: corroborating source on crypto-ATM fraud against older adults
+- source: aarp_crypto_atm_laws_2026
+  ref: https://www.aarp.org/advocacy/crypto-atm-fraud-protections/
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: state crypto-ATM protection law context
+name: Crypto-ATM direction ("the safety locker")
+canonical_signals:
+  verbal:
+  - sig.payment.crypto_atm
+  artifact: []
+crosswalk:
+  ftc: null
+  ic3: Investment-Confidence Fraud / Government Impersonation
+  apwg: null
+typical_descriptions:
+- they told me to put cash into a bitcoin machine at the gas station
+- I was told to deposit money into a "safety locker"
+- they called it a federal safety account and said to use the crypto ATM
+- the bank/IRS/utility said to pay through a bitcoin kiosk
+narrative: 'This archetype can be attached to almost any scam narrative — a
+
+  fake bank, government agency, or utility — because the tell is not who is
+
+  calling but WHAT they are asking the protected user to physically do:
+
+  deposit cash into a cryptocurrency ATM or kiosk, sometimes dressed up with
+
+  a reassuring name like "safety locker" or "federal safety account." No
+
+  legitimate institution of any kind directs payment through a crypto ATM.
+
+  The physical act of standing at a machine and feeding in cash is itself
+
+  the decisive tell, independent of the cover story used to get there.'
+response_template: 'No real bank, government office, or utility company ever
+
+  asks you to pay by putting cash into a bitcoin or crypto machine — that
+
+  is always a scam, no matter who they say they are.
+
+
+  Please don''t go to that machine or put in any money. If you already
+
+  did, that money can''t be gotten back, so let''s talk about what to do
+
+  next and who to report it to.
+
+
+  If anyone ever tells you to use a "safety locker" or a bitcoin machine
+
+  to protect your money, that''s the moment to stop and call me.'
+forward_recommended_when: []
+escalation:
+  caregiver_notify: urgent
+  cross_channel_correlate: true
+  log_as: crypto_atm_direction_attempt

@@ -1,0 +1,16 @@
+id: mech.social_compliance
+kind: mechanism
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_patterns.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: 'theory-derived (stajano_wilson: stajano_wilson.social_compliance); bibliography in
+    documents/papers/triage_patterns_references.md'
+name: Social Compliance
+theory: stajano_wilson
+source_principle: stajano_wilson.social_compliance
+description: 'Compliance with a confident instruction because refusing feels rude or improper:
+  keeping a secret when told to, reading back a code when asked.'

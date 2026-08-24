@@ -1,0 +1,15 @@
+id: mech.commitment
+kind: mechanism
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_patterns.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: 'theory-derived (cialdini: cialdini.commitment); bibliography in documents/papers/triage_patterns_references.md'
+name: Commitment / Consistency
+theory: cialdini
+source_principle: cialdini.commitment
+description: Compliance because the target has already invested (sunk cost) and acts consistently
+  with prior steps, as in advance-fee chains and the near-win pattern of romance-scam re-victimization.

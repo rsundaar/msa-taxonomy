@@ -1,0 +1,28 @@
+id: sig.contact.unsolicited_doorknock
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: dc_dlcp_home_improvement_scams_2026
+  ref: https://dlcp.dc.gov/release/protect-yourself-and-loved-ones-home-improvement-scams-targeting-seniors
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: The unsolicited door-knock contractor opener.
+- source: mass_gov_contractor_scams_2026
+  ref: https://www.mass.gov/news/avoiding-home-improvement-and-contractor-scams
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: corroborating source on unsolicited-contractor red flags
+name: Unsolicited contractor knocks claiming to have noticed needed work
+detection_mode:
+- verbal
+severity: medium
+grounding: theory
+mechanisms:
+- mech.scarcity_urgency
+short_rationale: A stranger who was not called shows up claiming to be "working in the neighborhood"
+  or to have "noticed your roof," and offers to fix a problem the homeowner never reported.
+  The unsolicited claim of a problem is the same structural tell as any other doorstep or
+  phone scam.
+natural_probes:
+- Did you call anyone, or did they just show up and say they noticed something wrong?
+- Did they say they were already working nearby?

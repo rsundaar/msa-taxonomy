@@ -1,0 +1,24 @@
+id: sig.payment.crypto_transfer
+kind: signal
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_patterns.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: migrated from the MSA pattern library (seed v0)
+name: Payment demanded in cryptocurrency or bitcoin
+detection_mode:
+- verbal
+- artifact
+severity: critical
+grounding: theory
+mechanisms:
+- mech.dishonesty_appeal
+short_rationale: Demands for bitcoin or other cryptocurrency are a hallmark of scams because
+  the payment is fast, irreversible, and very hard to trace or recover.
+natural_probes:
+- Did they ask you to pay with bitcoin or any kind of cryptocurrency?
+- Did they tell you to use a Bitcoin machine, a crypto app, or a special online wallet?
+- Was the payment they wanted something other than your normal bank or card?

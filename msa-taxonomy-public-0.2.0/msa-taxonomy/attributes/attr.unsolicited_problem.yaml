@@ -1,0 +1,24 @@
+id: attr.unsolicited_problem
+kind: attribute
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_evidence.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: migrated from the hand-coded L1 evidence matrix (seed v0)
+attribute_id: unsolicited_problem
+order: 8
+severity: critical
+role: decisive_positive
+values:
+- 'yes'
+- 'no'
+- unknown
+multi: false
+describe: whether an UNSOLICITED caller, visitor, or message claims something of the senior's
+  has a problem (their computer, home, plumbing, electrical, roof, account, taxes, etc.) and
+  offers to fix it, asks to be let in or given access, or asks for payment — the senior did
+  not contact them first
+probe: null

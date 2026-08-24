@@ -1,0 +1,29 @@
+id: sig.contact.multi_stage_chain
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: ic3_tech_support_gov_impersonation_2026
+  ref: https://www.ic3.gov/crimeinfo/techsupportgovimpersonation
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: The phantom-hacker chain's fingerprint is that a second or third caller continues
+    the same story (tech support -> bank -> government), each "confirming" the last. Paired
+    with the attr.prior_related_contact attribute, so intake asks whether anyone else has
+    called about the same problem.
+name: A second or third caller continues the same story
+detection_mode:
+- verbal
+severity: high
+grounding: theory
+mechanisms:
+- mech.authority
+- mech.social_proof
+short_rationale: Legitimate institutions do not hand a customer off through a sequence of
+  separate callers "confirming" one another's story about the same problem. The chain of callers,
+  each appearing to corroborate the last, is itself the tell that no real institution behaves
+  this way.
+natural_probes:
+- Has anyone else called you about this same problem — maybe someone else claiming to be from
+  your bank, the police, or a government office?
+- Did the first caller tell you someone else would be calling to confirm this?

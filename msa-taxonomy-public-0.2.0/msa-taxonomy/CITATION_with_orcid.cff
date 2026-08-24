@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+title: "The MSA Taxonomy: Mechanism-Signal-Archetype, a structured vocabulary for elder-fraud manipulation tactics"
+message: "If you use this taxonomy, please cite it using these metadata."
+type: dataset
+authors:
+  - family-names: Sundaar
+    given-names: Ravi
+    affiliation: "Sahai LLC"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add once registered
+version: 0.2.0
+date-released: 2026-08-19
+license: CC-BY-4.0
+repository-code: "https://github.com/REPLACE-ME/msa-taxonomy"
+# doi: "10.5281/zenodo.REPLACE-ME"   # Zenodo mints this on first release; add it, then re-tag
+abstract: >-
+  A versioned, machine-readable taxonomy of the manipulation tactics used in
+  fraud against older adults. Organised in three levels: mechanisms (the
+  persuasion lever that explains why a target complied), signals (what can be
+  observed in a contact), and archetypes (the scam families those signals
+  compose into). Supporting sets cover a case-file evidence matrix and
+  necessary-for-legitimacy rules for commonly impersonated institutions.
+  Version 0.2.0 contains 75 entities. Every entity carries a stable identifier,
+  a version, a severity, a declared theoretical grounding, and provenance
+  citing the public source it rests on. Entities are deprecated rather than
+  deleted and identifiers are never reused. Decision logic, detector patterns,
+  and evaluation corpora are not part of this release.
+keywords:
+  - elder fraud
+  - financial exploitation
+  - scam taxonomy
+  - social engineering
+  - persuasion
+  - older adults
+  - aging in place

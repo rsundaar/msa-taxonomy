@@ -1,0 +1,21 @@
+id: src.irs
+kind: source
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/source_legitimacy.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: The IRS initiates contact by U.S. mail. It does not email, text, or use social media
+    to demand payment or personal information, and never demands gift cards or threatens immediate
+    arrest. (IRS "Tax Scams" guidance; FTC.)
+label: the IRS
+aliases:
+- irs
+- internal revenue service
+- the tax office
+never_channels:
+- email
+- text
+- social

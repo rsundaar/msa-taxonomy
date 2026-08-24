@@ -1,0 +1,103 @@
+id: arch.government_impersonation
+kind: archetype
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: ftc_sentinel_2025
+  ref: ftc_sentinel_2025
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: operational-category source cited by the seed library
+- source: ic3_2024
+  ref: ic3_2024
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: operational-category source cited by the seed library
+name: Government agency impersonation (IRS / Social Security / Medicare / law enforcement)
+canonical_signals:
+  verbal:
+  - sig.impersonation.government_authority
+  - sig.pressure.threat_of_arrest
+  - sig.pressure.urgency_act_today
+  - sig.request.identity_or_account_info
+  - sig.payment.gift_cards
+  artifact:
+  - sig.url.lookalike_domain
+  - sig.sender.spf_dkim_dmarc_fail
+crosswalk:
+  ftc: Government Imposter Scams
+  ic3: Government Impersonation
+  apwg: null
+typical_descriptions:
+- the IRS called and said I owe back taxes and have to pay today
+- Social Security said my number was suspended for suspicious activity
+- someone from Medicare needs my number to send me a new card
+- I got an email from the IRS saying I'll be arrested if I don't pay
+- a man said he was from the sheriff and there's a warrant unless I pay a fine
+narrative: 'Someone claims to be from a government office — the IRS, Social Security,
+
+  Medicare, the courts, or the police — and pressures the protected user to
+
+  act immediately. The hallmarks are a claim of official authority, a threat
+
+  of consequences (arrest, a lawsuit, deportation, or a suspended Social
+
+  Security number or benefits), urgency, and then either a demand for an
+
+  untraceable payment (gift cards, wire, or cryptocurrency) OR a request to
+
+  "confirm" identifying numbers such as a Social Security, Medicare, or card
+
+  number.
+
+
+  The decisive fact is how a real agency behaves: the IRS, Social Security,
+
+  and Medicare initiate contact by mail, never threaten immediate arrest over
+
+  the phone, never demand gift cards, and never call to ask you to read back
+
+  your own Social Security or card number. Judge the behavior described, not
+
+  merely that "the government contacted me" — agencies do legitimately reach
+
+  out, so a calm mailed notice with no threat and no payment demand is not
+
+  this scam.
+
+
+  Two channels: a phone call (decide from the verbal account) and an email or
+
+  text (the artifact — the sender and any link settle it, so ask to forward).'
+response_template: 'That has the marks of a very common scam. Real government offices like
+  the
+
+  IRS or Social Security reach out by letter in the mail, not by a surprise
+
+  call or email, and they never threaten to arrest you on the spot or ask you
+
+  to pay with gift cards. They also will not call to have you read back your
+
+  Social Security or card number.
+
+
+  Please don''t pay anything and don''t share any of those numbers. If you want
+
+  to be sure, hang up and call the agency back yourself, using the number from
+
+  a letter they have actually mailed you or from their official website, not
+
+  any number this caller or message gave you.
+
+
+  If this came as an email or a text rather than a call, you can forward it to
+
+  check@sahai.care and I''ll look at the sender and the links before you do
+
+  anything.'
+forward_recommended_when:
+- The message arrived as an email or a text with a link
+- Sender claims to be the IRS, Social Security, Medicare, or another agency by email
+escalation:
+  caregiver_notify: routine
+  cross_channel_correlate: true
+  log_as: government_impersonation_attempt

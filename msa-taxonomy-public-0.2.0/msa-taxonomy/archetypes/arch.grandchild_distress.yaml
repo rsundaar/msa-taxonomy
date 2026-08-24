@@ -1,0 +1,84 @@
+id: arch.grandchild_distress
+kind: archetype
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: ftc_sentinel_2025
+  ref: ftc_sentinel_2025
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: operational-category source cited by the seed library
+- source: ic3_2024
+  ref: ic3_2024
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: operational-category source cited by the seed library
+name: Grandchild in distress (voice-clone variant)
+canonical_signals:
+  verbal:
+  - sig.impersonation.voice_clone
+  - sig.pressure.urgency_act_today
+  - sig.payment.gift_cards
+  - sig.secrecy.dont_tell_family
+  artifact: []
+crosswalk:
+  ftc: Family/Friend Imposter Scams
+  ic3: Other Imposter / Family Member Imposter
+  apwg: null
+typical_descriptions:
+- my grandson called and said he was in jail
+- I got a call that one of my kids was in an accident
+- someone said my grandchild needs bail money
+- he sounded like Jamie but something felt off about it
+narrative: 'Scammers can now clone a grandchild''s voice from a few seconds of
+
+  social-media audio. The hallmarks of this scam are urgency (the
+
+  grandchild is in jail / in hospital / in an accident *right now*),
+
+  gift-card payment ("they only accept gift cards at the courthouse"),
+
+  and secrecy ("please don''t tell mom — she''ll worry"). The protected
+
+  user often describes a feeling that the voice was "off" — slower,
+
+  less expressive, missing inside expressions — even before learning
+
+  to suspect AI cloning.
+
+
+  The right response is always: hang up and verify by calling the
+
+  grandchild on a number the protected user already has saved,
+
+  independently. If the grandchild does not answer, call another
+
+  family member. The protected user must not send money, send gift
+
+  cards, or follow further instructions from the original caller.'
+response_template: 'That sounds like a very common scam right now, and a serious one.
+
+  Scammers can copy someone''s voice from just a few seconds of
+
+  social media, so it can sound just like {grandchild_name} even
+
+  when it isn''t really them.
+
+
+  Before you do anything, please call {grandchild_name} directly —
+
+  on the phone number you already have saved, not any number that
+
+  caller gave you. If they don''t answer, call {grandchild_other_family}.
+
+
+  Do not send any money, do not buy any gift cards, and do not
+
+  follow any more instructions from the person who called you.
+
+
+  I''ll wait here with you while you make the call.'
+forward_recommended_when: []
+escalation:
+  caregiver_notify: urgent
+  cross_channel_correlate: true
+  log_as: elder_financial_exploitation_attempt

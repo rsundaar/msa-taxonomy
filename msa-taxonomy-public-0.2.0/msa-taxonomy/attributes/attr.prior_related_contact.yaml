@@ -1,0 +1,26 @@
+id: attr.prior_related_contact
+kind: attribute
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: fbi_phoenix_phantom_hacker_2026
+  ref: https://www.fbi.gov/contact-us/field-offices/phoenix/news/press-releases/the-phantom-hacker-fbi-phoenix-warns-public-of-new-financial-scam
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: '"Has anyone else called you about this?" The phantom-hacker chain''s fingerprint
+    is a second or third caller continuing the same story. It carries the archetype_cue role,
+    mirroring attr.relationship, so that unrelated cases are not interrogated about a chain
+    that is not there. It is recorded when volunteered.'
+attribute_id: prior_related_contact
+order: 12
+severity: high
+role: archetype_cue
+values:
+- 'yes'
+- 'no'
+- unknown
+multi: false
+describe: whether a separate caller has already contacted the senior about this same problem
+  (e.g. tech support, then "the bank", then "the government")
+probe: Has anyone else contacted you about this same problem — maybe your bank, the police,
+  or a government office?

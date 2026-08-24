@@ -1,0 +1,30 @@
+id: sig.payment.full_upfront_demand
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: usnews_contractor_red_flags_2026
+  ref: https://realestate.usnews.com/real-estate/articles/home-improvement-contractor-scams-the-red-flags-to-watch-for
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Full payment, or a deposit over roughly 20%, demanded upfront, cash-only, with today-only
+    pricing pressure.
+- source: mass_gov_contractor_scams_2026
+  ref: https://www.mass.gov/news/avoiding-home-improvement-and-contractor-scams
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: corroborating source on upfront-payment and cash-only red flags
+name: Demands full payment or a large deposit upfront, cash only, today-only price
+detection_mode:
+- verbal
+severity: high
+grounding: theory
+mechanisms:
+- mech.dishonesty_appeal
+- mech.scarcity_urgency
+short_rationale: Reputable contractors work off a modest deposit (commonly capped by state
+  law well under half the job) against a written contract, and their price does not depend
+  on signing today. Full or large upfront payment, cash-only insistence, and today-only pricing
+  together are the standard doorstep-contractor scam.
+natural_probes:
+- Are they asking to be paid in full, or for a large deposit, before starting the work?
+- Do they want cash only, and is the price only good if you decide today?

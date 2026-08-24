@@ -1,0 +1,15 @@
+id: mech.liking
+kind: mechanism
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_patterns.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: 'theory-derived (cialdini: cialdini.liking); bibliography in documents/papers/triage_patterns_references.md'
+name: Liking / Affection
+theory: cialdini
+source_principle: cialdini.liking
+description: Compliance because the requester has cultivated affection or rapport, as in romance
+  and long-con grooming scams.

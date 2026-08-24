@@ -1,0 +1,24 @@
+id: sig.narrative.new_medicare_card_fee
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: elderlawanswers_medicare_scams_2026
+  ref: https://www.elderlawanswers.com/medicare-open-enrollment-scams-how-to-protect-yourself-21278
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: '"New or updated Medicare card" fee demand. Real replacement cards are free and automatic
+    (Medicare.gov).'
+name: Asked to pay a fee for a "new" or "updated" Medicare card
+detection_mode:
+- verbal
+severity: high
+grounding: theory
+mechanisms:
+- mech.dishonesty_appeal
+short_rationale: Medicare cards, including replacements and the periodic new-card rollouts,
+  are always free and mailed automatically. Any request for payment to receive or "process"
+  a Medicare card is a scam.
+natural_probes:
+- Did they ask you to pay anything to get a new or updated Medicare card?
+- Did they say your current Medicare card was expiring or no longer valid?

@@ -1,0 +1,82 @@
+id: arch.fake_package_delivery
+kind: archetype
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: ftc_sentinel_2025
+  ref: ftc_sentinel_2025
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: operational-category source cited by the seed library
+- source: apwg_phishing_trends
+  ref: apwg_phishing_trends
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: operational-category source cited by the seed library
+name: Fake package delivery (USPS/FedEx/UPS/Amazon)
+canonical_signals:
+  verbal:
+  - sig.pressure.urgency_act_today
+  artifact:
+  - sig.url.lookalike_domain
+  - sig.sender.spf_dkim_dmarc_fail
+crosswalk:
+  ftc: Online Shopping and Negative Reviews — Shipping
+  ic3: Other / Phishing
+  apwg: null
+typical_descriptions:
+- I got a text from USPS about a package needing a fee
+- an email said my Amazon package couldn't be delivered
+- FedEx wants me to confirm my address with a small charge
+narrative: 'The protected user receives an email or text claiming a package
+
+  delivery problem from a known shipping company. A link or button
+
+  asks them to "confirm address," "pay a small redelivery fee," or
+
+  "verify identity." Verbally, the scam often sounds harmless —
+
+  delivery problems are routine. The fraud is in the *artifact*:
+
+  the link points to a lookalike domain (uspspackage-tracking.com,
+
+  not usps.com), the sender email fails authentication, and the
+
+  "small fee" page captures payment-card details for further fraud.
+
+
+  This archetype is a prototype case for Show-mode escalation. The
+
+  verbal account alone cannot confidently distinguish this from a
+
+  real delivery issue — the senior describes "a normal-sounding
+
+  shipping email." The artifact signals are the load-bearing evidence.'
+response_template: 'That might be a scam, but I can''t tell for sure from what you''ve
+
+  told me — fake delivery messages are common right now, and they
+
+  can look exactly like real ones. Before you click anything,
+
+  could you forward me the message?
+
+
+  You can forward emails to check@sahai.care. For texts, take a
+
+  screenshot and send it the same way. Once I see the actual
+
+  message, I can check the link and tell you with confidence.
+
+
+  In the meantime: don''t click anything in the message, and don''t
+
+  pay any fee it asks for. Real shipping companies never charge
+
+  redelivery fees by text or email.'
+forward_recommended_when:
+- Senior mentions a link to track or pay
+- Sender claims to be USPS, FedEx, UPS, DHL, or Amazon
+- Tracking number, order number, or 'redelivery fee' is mentioned
+escalation:
+  caregiver_notify: routine
+  cross_channel_correlate: true
+  log_as: phishing_attempt_delivery

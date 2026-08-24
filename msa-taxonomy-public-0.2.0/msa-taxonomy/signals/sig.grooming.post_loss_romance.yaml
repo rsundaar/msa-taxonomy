@@ -1,0 +1,27 @@
+id: sig.grooming.post_loss_romance
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: aarp_bereavement_scams_2026
+  ref: https://www.aarp.org/money/scams-fraud/funeral-bereavement/
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Post-loss romance sensitivity. Obituary-mined targeting means a newly bereaved older
+    adult is more likely to be approached with unusually warm, fast attention.
+name: New warm/romantic contact appearing soon after a known bereavement
+detection_mode:
+- verbal
+severity: medium
+grounding: theory
+mechanisms:
+- mech.liking
+- mech.kindness_exploitation
+short_rationale: Obituaries publish exactly what a scammer needs — that someone is newly widowed
+  and may be lonely. A new admirer or "old friend" appearing soon after a loss, moving quickly
+  toward affection, deserves extra caution; combined with any money ask it should be weighted
+  more heavily than the same pattern without a recent loss.
+natural_probes:
+- Did this person reach out to you around the time of your loss?
+- Have they mentioned wanting to help you through a hard time, or being there for you the
+  way your (spouse/relative) would have wanted?

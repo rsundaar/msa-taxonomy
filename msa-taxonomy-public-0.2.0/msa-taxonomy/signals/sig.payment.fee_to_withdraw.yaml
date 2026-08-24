@@ -1,0 +1,25 @@
+id: sig.payment.fee_to_withdraw
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: propublica_pig_butchering_2026
+  ref: https://www.propublica.org/article/whats-a-pig-butchering-scam-heres-how-to-avoid-falling-victim-to-one
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: The "slaughter" tell. A fee or tax is demanded before the older adult's own money
+    can be withdrawn from the fake platform.
+name: Told to pay a fee or tax before withdrawing your own money
+detection_mode:
+- verbal
+severity: critical
+grounding: theory
+mechanisms:
+- mech.dishonesty_appeal
+short_rationale: No legitimate platform ever charges a fee, tax, or "insurance" payment before
+  releasing money that is already the account holder's. This request is the moment the arrangement
+  turns from investment story to extraction.
+natural_probes:
+- Did they say you need to pay a fee, tax, or insurance charge before you can get your own
+  money out?
+- Were you told you'd get your money back only after paying something first?

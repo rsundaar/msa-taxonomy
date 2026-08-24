@@ -1,0 +1,19 @@
+id: attr.claimed_source
+kind: attribute
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_evidence.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: migrated from the hand-coded L1 evidence matrix (seed v0)
+attribute_id: claimed_source
+order: 1
+severity: medium
+role: archetype_cue
+values: null
+multi: false
+describe: who the other party claims to be, in a few words (e.g. the IRS, a bank, a company,
+  a grandson)
+probe: Who do they say they are?

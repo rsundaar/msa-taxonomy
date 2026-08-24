@@ -1,0 +1,95 @@
+id: arch.investment_grooming
+kind: archetype
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: ic3_2025_annual_report
+  ref: https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Investment and crypto fraud was the single largest older-adult loss category in 2025
+    ($3.52B, IC3).
+- source: propublica_pig_butchering_2026
+  ref: https://www.propublica.org/article/whats-a-pig-butchering-scam-heres-how-to-avoid-falling-victim-to-one
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: pig-butchering stage structure (opener, migration, mentoring, fake gains, fee-to-withdraw)
+- source: fraud_codex_pig_butchering_2026
+  ref: https://www.thefraudcodex.com/codex/pig-butchering
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: corroborating stage description
+name: Investment/crypto grooming (pig-butchering)
+canonical_signals:
+  verbal:
+  - sig.contact.wrong_number_opener
+  - sig.contact.platform_migration
+  - sig.grooming.investment_mentor
+  - sig.platform.fake_gains
+  - sig.payment.fee_to_withdraw
+  artifact: []
+crosswalk:
+  ftc: Investment Scams
+  ic3: Investment-Confidence Fraud
+  apwg: null
+typical_descriptions:
+- my new friend is teaching me about investing
+- I met someone online who trades crypto
+- the app shows I made $4,000
+- they said I need to pay the tax before I can withdraw
+- someone texted me by mistake and we just kept talking
+- they want me to move our chats to WhatsApp
+narrative: 'This is the "pig-butchering" pattern: a stranger opens contact
+
+  casually — a "wrong number" text, a dating-app match, a friendly DM — then
+
+  builds a warm relationship over weeks or months before ever mentioning
+
+  money. They often ask to move the conversation to WhatsApp or Telegram.
+
+  Once trust is established, they mention their own success trading crypto
+
+  and offer to teach the protected user. A small first deposit is allowed to
+
+  grow and can even be withdrawn, which feels like proof it works. Larger
+
+  deposits follow, shown growing fast in an app the scammer controls. The
+
+  "slaughter" moment is a fee, tax, or insurance payment demanded before the
+
+  protected user can withdraw their own money — no legitimate platform ever
+
+  charges a fee to release money that is already the account holder''s.
+
+
+  Because the early stages look like an ordinary new friendship, the right
+
+  response early on is a gentle question, not an accusation: how did they
+
+  meet, have they met in person, has money or investing come up. Only once
+
+  money is actually being asked for does this become a clear warning.'
+response_template: 'This has the pattern of a common and very costly scam
+
+  where someone builds an online relationship before asking for money to
+
+  invest. It''s not something to be embarrassed about — this is one of the
+
+  most convincing scams there is, and you did exactly the right thing by
+
+  telling me about it.
+
+
+  Please don''t send any more money or pay any fee to "unlock" a
+
+  withdrawal — a real platform never charges to give you your own money
+
+  back. I''d also gently ask: have you ever met this person in person,
+
+  independent of anything they''ve told you?
+
+
+  Let''s hold off on anything further until we''ve talked it through.'
+forward_recommended_when: []
+escalation:
+  caregiver_notify: urgent
+  cross_channel_correlate: true
+  log_as: investment_grooming_attempt

@@ -1,0 +1,15 @@
+id: mech.social_proof
+kind: mechanism
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_patterns.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: 'theory-derived (cialdini: cialdini.social_proof); bibliography in documents/papers/triage_patterns_references.md'
+name: Social Proof / Herd
+theory: cialdini
+source_principle: cialdini.social_proof
+description: 'Compliance because others are said to be doing it: fake investor groups, testimonials.
+  Subsumes Stajano-Wilson "herd".'

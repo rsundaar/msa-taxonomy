@@ -1,0 +1,24 @@
+id: sig.request.remote_access
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: fbi_phoenix_phantom_hacker_2026
+  ref: https://www.fbi.gov/contact-us/field-offices/phoenix/news/press-releases/the-phantom-hacker-fbi-phoenix-warns-public-of-new-financial-scam
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Phase 1 of the phantom-hacker chain, the tech-support imposter. The remote-access
+    ask that follows the pop-up or call is the entry point.
+name: Asked to install remote-access software or hand over computer control
+detection_mode:
+- verbal
+severity: critical
+grounding: theory
+mechanisms:
+- mech.authority
+short_rationale: A caller posing as tech support asks to remotely control the computer "to
+  fix the problem." Once connected they can see accounts, move money, and stage the next phase
+  of the scam.
+natural_probes:
+- Did they ask you to install anything, or to let them see or control your computer screen?
+- Are they (or were they) able to see what's on your screen right now?

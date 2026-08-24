@@ -1,0 +1,22 @@
+id: attr.self_verified
+kind: attribute
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_evidence.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: migrated from the hand-coded L1 evidence matrix (seed v0)
+attribute_id: self_verified
+order: 6
+severity: low
+role: reassure_trigger
+values:
+- 'yes'
+- 'no'
+- unknown
+multi: false
+describe: whether the senior ALREADY checked it themselves on a channel they trust (e.g. hung
+  up and called the number on their card)
+probe: null

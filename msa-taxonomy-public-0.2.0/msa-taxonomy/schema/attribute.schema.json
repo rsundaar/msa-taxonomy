@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sahai-knowledge/attribute.schema.json",
+  "title": "Case-file attribute (the L1 evidence matrix row)",
+  "type": "object",
+  "required": ["attribute_id", "order", "severity", "role", "multi", "describe"],
+  "properties": {
+    "kind": {"const": "attribute"},
+    "attribute_id": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+    "order": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Matrix position; breaks severity ties in next-question selection."
+    },
+    "severity": {"enum": ["critical", "high", "medium", "low"]},
+    "role": {
+      "enum": ["decisive_positive", "inspect_trigger", "exploitation_trigger",
+               "reassure_trigger", "archetype_cue", "context"]
+    },
+    "values": {
+      "anyOf": [
+        {"type": "null"},
+        {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      ],
+      "description": "Controlled vocabulary, or null for free text."
+    },
+    "multi": {"type": "boolean"},
+    "describe": {"type": "string", "minLength": 1},
+    "probe": {"anyOf": [{"type": "null"}, {"type": "string", "minLength": 1}]}
+  }
+}

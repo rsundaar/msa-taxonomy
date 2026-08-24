@@ -1,0 +1,75 @@
+id: arch.bereavement_targeting
+kind: archetype
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: aarp_bereavement_scams_2026
+  ref: https://www.aarp.org/money/scams-fraud/funeral-bereavement/
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Debt-of-the-deceased collection, benefit and release fees, obituary-mined identity
+    theft, and post-loss romance sensitivity. A known recent loss raises this family's priors.
+- source: fbi_elpaso_bereavement_scams_2026
+  ref: https://www.fbi.gov/contact-us/field-offices/elpaso/news/press-releases/fbi-el-paso-warns-about-scams-that-are-targeting-the-deceased-and-their-grieving-families-bereavement-scams
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: corroborating FBI advisory on bereavement-targeted scams
+name: Bereavement targeting
+canonical_signals:
+  verbal:
+  - sig.narrative.debt_of_the_deceased
+  - sig.narrative.benefit_release_fee
+  - sig.grooming.post_loss_romance
+  artifact: []
+crosswalk:
+  ftc: null
+  ic3: Other Imposter Scams
+  apwg: null
+typical_descriptions:
+- someone called saying I owe my husband's debt
+- I got a call saying I need to pay a fee to release his life insurance
+- someone new has been very attentive to me since the funeral
+- a company called about settling my wife's accounts
+narrative: 'Obituaries publish exactly what a scammer needs to know: that
+
+  someone is newly bereaved, may be managing an estate alone, and may be
+
+  emotionally vulnerable or lonely. This family covers three related
+
+  patterns: (1) debt-of-the-deceased collection, where a caller pressures
+
+  the surviving spouse or family to personally pay a debt that belongs to
+
+  the estate, not to them; (2) benefit-release fees, where a fee is
+
+  demanded before a life-insurance or pension payout can be "released" —
+
+  no legitimate insurer or administrator ever requires this; and (3)
+
+  post-loss romance targeting, where a new, unusually warm contact appears
+
+  soon after a loss. None of these are automatically scams on their own,
+
+  but a known recent bereavement should raise caution on all of them,
+
+  especially anything that also asks for money.'
+response_template: 'I''m sorry you''re dealing with this on top of
+
+  everything else. A few things about this situation don''t add up: any
+
+  debt from before your (spouse''s/relative''s) passing is owed by the
+
+  estate, not by you personally, and no real insurance company or benefit
+
+  program charges a fee to release money that''s already owed to you.
+
+
+  Please don''t pay anything on this call. Let''s check with the estate''s
+
+  lawyer or the actual insurance company, using a number you already have
+
+  for them, before doing anything else.'
+forward_recommended_when: []
+escalation:
+  caregiver_notify: urgent
+  cross_channel_correlate: true
+  log_as: bereavement_targeting_attempt

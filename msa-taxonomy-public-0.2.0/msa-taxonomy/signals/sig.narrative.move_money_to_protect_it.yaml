@@ -1,0 +1,31 @@
+id: sig.narrative.move_money_to_protect_it
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: fbi_phoenix_phantom_hacker_2026
+  ref: https://www.fbi.gov/contact-us/field-offices/phoenix/news/press-releases/the-phantom-hacker-fbi-phoenix-warns-public-of-new-financial-scam
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: 'Phase 2 of the phantom-hacker chain, the fake bank fraud department: "your accounts
+    are compromised, move your money to keep it safe."'
+- source: forbes_phantom_hacker_2025
+  ref: https://www.forbes.com/sites/daveywinder/2025/07/26/fbi-confirms-phantom-hacker-warning-for-all-android-and-iphone-users/
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: corroborating description of the "move money to protect it" narrative
+name: Told to move money "to protect it" from fraud
+detection_mode:
+- verbal
+severity: critical
+grounding: theory
+mechanisms:
+- mech.authority
+- mech.scarcity_urgency
+short_rationale: No real bank, brokerage, or government agency ever instructs a customer to
+  move their own money into a different account to keep it safe from fraud — that instruction
+  IS the fraud. This is the phantom-hacker's second-stage narrative, usually delivered by
+  a fake "bank fraud department."
+natural_probes:
+- Did anyone tell you to move your money to a different or "safer" account?
+- Who told you your money needed to be moved — did they say they were from your bank, or somewhere
+  else?

@@ -1,0 +1,23 @@
+id: attr.platform_moved
+kind: attribute
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: propublica_pig_butchering_2026
+  ref: https://www.propublica.org/article/whats-a-pig-butchering-scam-heres-how-to-avoid-falling-victim-to-one
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Whether the contact asked to move off the original platform onto an unmoderated app
+    such as WhatsApp or Telegram. Corresponds to sig.contact.platform_migration.
+attribute_id: platform_moved
+order: 11
+severity: medium
+role: archetype_cue
+values:
+- 'yes'
+- 'no'
+- unknown
+multi: false
+describe: whether the other party asked to continue the conversation on a different app (WhatsApp,
+  Telegram, etc.) from where the senior first met them
+probe: Did they ask you to start talking somewhere else, like WhatsApp or Telegram?

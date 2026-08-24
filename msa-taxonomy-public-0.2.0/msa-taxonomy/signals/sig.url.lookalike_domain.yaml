@@ -1,0 +1,27 @@
+id: sig.url.lookalike_domain
+kind: signal
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_patterns.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: migrated from the MSA pattern library (seed v0)
+name: URL points to a lookalike domain
+detection_mode:
+- artifact_only
+severity: critical
+grounding: operational
+mechanisms: []
+short_rationale: Lookalike domains (e.g., medicare-help-center.com vs medicare.gov, amaz0n.com
+  vs amazon.com) are a hallmark of phishing.
+natural_probes: []
+detector: url_reputation_check
+artifact_evaluation: 'Compare URL domain against canonical domain for the brand the
+
+  message claims to represent. Check for: homoglyph substitution
+
+  (e.g., ''a'' vs ''а'' Cyrillic), added subdomains or hyphens,
+
+  TLD substitution (.com vs .co vs .ru), recently-registered domain.'

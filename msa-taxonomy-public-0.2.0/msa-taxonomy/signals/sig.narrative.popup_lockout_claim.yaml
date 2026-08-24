@@ -1,0 +1,29 @@
+id: sig.narrative.popup_lockout_claim
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: ic3_tech_support_gov_impersonation_2026
+  ref: https://www.ic3.gov/crimeinfo/techsupportgovimpersonation
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: The leading tech-support entry point. This signal is the older adult's VERBAL description
+    of a browser pop-up ("my screen froze and a number came up"). The matching artifact_only
+    detector, sig.detector.tech_support_scam, reads screenshot text and is kept as a separate
+    entity per the grounding-discipline rule (MSA paper, section 9).
+name: Described a locked/alarming pop-up with a phone number to call
+detection_mode:
+- verbal
+severity: high
+grounding: theory
+mechanisms:
+- mech.scarcity_urgency
+- mech.authority
+short_rationale: A browser pop-up claiming the computer is infected or locked, with an alarming
+  message and a phone number to call, and an instruction not to restart or shut down the computer,
+  is the standard tech-support-scam entry point. The senior often describes this before ever
+  mentioning "scam" or "virus."
+natural_probes:
+- Did a message pop up on your screen saying something was wrong with your computer, with
+  a phone number to call?
+- Did it tell you not to turn off or restart your computer?

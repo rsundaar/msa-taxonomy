@@ -1,0 +1,35 @@
+id: attr.pressure_tone
+kind: attribute
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_evidence.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: migrated from the hand-coded L1 evidence matrix (seed v0)
+- source: fbi_phoenix_phantom_hacker_2026
+  ref: https://www.fbi.gov/contact-us/field-offices/phoenix/news/press-releases/the-phantom-hacker-fbi-phoenix-warns-public-of-new-financial-scam
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Added the move_money_claim value. Additive; existing values unchanged. It lets pressure_tone
+    carry the phantom-hacker "move your money to protect it" narrative, and corresponds to
+    sig.narrative.move_money_to_protect_it.
+attribute_id: pressure_tone
+order: 4
+severity: high
+role: decisive_positive
+values:
+- urgency
+- threat
+- secrecy
+- too_good_to_be_true
+- affection
+- move_money_claim
+- none
+- unknown
+multi: true
+describe: the emotional pressure in the contact; threat and secrecy are the strong ones (may
+  be more than one). move_money_claim = told to move money to a "safer" account
+  to protect it from fraud.
+probe: How did it make you feel — were they rushing you, threatening you, or telling you to
+  keep it quiet?

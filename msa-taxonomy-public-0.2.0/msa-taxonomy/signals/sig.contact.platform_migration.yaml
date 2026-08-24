@@ -1,0 +1,25 @@
+id: sig.contact.platform_migration
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: propublica_pig_butchering_2026
+  ref: https://www.propublica.org/article/whats-a-pig-butchering-scam-heres-how-to-avoid-falling-victim-to-one
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: The platform-migration ask ("let's move to WhatsApp/Telegram") moves the relationship
+    off a moderated, reportable channel.
+name: Ask to move the conversation to a different app
+detection_mode:
+- verbal
+severity: medium
+grounding: theory
+mechanisms:
+- mech.liking
+short_rationale: Scammers steer a new contact off the platform where they met (a dating app,
+  a text thread) onto WhatsApp or Telegram, which is unmoderated and harder for platforms
+  or family to see into.
+natural_probes:
+- Did they ask you to start talking somewhere else, like WhatsApp or Telegram, instead of
+  where you first met?
+- Was moving the conversation their idea?

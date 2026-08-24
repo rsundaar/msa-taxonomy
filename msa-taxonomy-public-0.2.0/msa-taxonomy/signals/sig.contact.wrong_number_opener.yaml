@@ -1,0 +1,30 @@
+id: sig.contact.wrong_number_opener
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: propublica_pig_butchering_2026
+  ref: https://www.propublica.org/article/whats-a-pig-butchering-scam-heres-how-to-avoid-falling-victim-to-one
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Pig-butchering, the top loss family. The "wrong number" text or DM opener is used
+    to start a relationship before the investment ask.
+- source: staysafeonline_pig_butchering_2026
+  ref: https://www.staysafeonline.org/articles/what-is-pig-butchering-and-how-to-spot-the-scam
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: corroborating source on the wrong-number/dating-app opener pattern
+name: Unsolicited "wrong number" or dating-app opener from a stranger
+detection_mode:
+- verbal
+severity: medium
+grounding: theory
+mechanisms:
+- mech.liking
+short_rationale: Pig-butchering relationships are seeded by a stranger who "accidentally"
+  texts the wrong number, matches on a dating app, or sends a friendly DM, then keeps the
+  conversation going. The opener itself is innocent-compatible; it is the tell only in combination
+  with what follows.
+natural_probes:
+- How did you first start talking to this person — did they text you by "mistake," match with
+  you on an app, or message you out of the blue?
+- Was this someone you had never talked to before they reached out?

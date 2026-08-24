@@ -1,0 +1,27 @@
+id: sig.request.identity_or_account_info
+kind: signal
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_patterns.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: migrated from the MSA pattern library (seed v0)
+name: Asked to confirm SSN, Medicare, card number, or a code
+detection_mode:
+- verbal
+- artifact
+severity: critical
+grounding: theory
+mechanisms:
+- mech.social_compliance
+- mech.authority
+short_rationale: Legitimate agencies and banks already have your information and never call,
+  text, or email to ask you to confirm your Social Security number, Medicare number, a card
+  or account number, or a one-time code. A request to 'verify' these is credential theft.
+natural_probes:
+- Did they ask you to confirm or give your Social Security number, Medicare number, or a card
+  or account number?
+- Did they ask you to read back a code that had just been texted to you?
+- Did they say they needed those numbers to 'verify your identity' or fix the problem?

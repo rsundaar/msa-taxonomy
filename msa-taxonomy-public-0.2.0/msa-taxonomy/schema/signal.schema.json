@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sahai-knowledge/signal.schema.json",
+  "title": "Behavioral or artifact signal (MSA Level 2)",
+  "type": "object",
+  "required": ["name", "detection_mode", "severity", "grounding", "short_rationale"],
+  "properties": {
+    "kind": {"const": "signal"},
+    "name": {"type": "string", "minLength": 1},
+    "detection_mode": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"enum": ["verbal", "artifact", "artifact_only"]}
+    },
+    "severity": {"enum": ["critical", "high", "medium", "low"]},
+    "grounding": {"enum": ["theory", "operational", "ungrounded_pending_review"]},
+    "mechanisms": {"type": "array", "items": {"type": "string", "pattern": "^mech\\."}},
+    "short_rationale": {"type": "string", "minLength": 1},
+    "natural_probes": {"type": "array", "items": {"type": "string"}},
+    "detector": {"type": "string"},
+    "pattern": {"type": "string"},
+    "pattern_flags": {"type": "array", "items": {"enum": ["IGNORECASE", "MULTILINE", "DOTALL"]}},
+    "pattern_published": {"type": "boolean", "description": "false = the detector's pattern is withheld from the public release."},
+    "pattern_note": {"type": "string"},
+    "artifact_evaluation": {"type": "string"},
+    "notes": {"type": "string"}
+  },
+  "allOf": [
+    {
+      "description": "theory-grounded signals must manifest >=1 mechanism; others must not list mechanisms (MSA paper §9)",
+      "if": {"properties": {"grounding": {"const": "theory"}}},
+      "then": {"required": ["mechanisms"], "properties": {"mechanisms": {"minItems": 1}}},
+      "else": {"properties": {"mechanisms": {"maxItems": 0}}}
+    },
+    {
+      "description": "regex detectors either carry their pattern or declare it unpublished",
+      "if": {"properties": {"detector": {"const": "regex"}}, "required": ["detector"]},
+      "then": {
+        "anyOf": [
+          {"required": ["pattern"]},
+          {"required": ["pattern_published"], "properties": {"pattern_published": {"const": false}}}
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+id: arch.contractor_redflag
+kind: archetype
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: dc_dlcp_home_improvement_scams_2026
+  ref: https://dlcp.dc.gov/release/protect-yourself-and-loved-ones-home-improvement-scams-targeting-seniors
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Contractor red flags at the door. Verbal-only in this release; estimate-photo review
+    is future work.
+- source: mass_gov_contractor_scams_2026
+  ref: https://www.mass.gov/news/avoiding-home-improvement-and-contractor-scams
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: corroborating source on contractor scam red flags
+- source: usnews_contractor_red_flags_2026
+  ref: https://realestate.usnews.com/real-estate/articles/home-improvement-contractor-scams-the-red-flags-to-watch-for
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: corroborating source on upfront-payment, cash-only, and permit red flags
+name: Contractor red flags (unsolicited doorstep repair)
+canonical_signals:
+  verbal:
+  - sig.contact.unsolicited_doorknock
+  - sig.payment.full_upfront_demand
+  - sig.narrative.pull_your_own_permits
+  artifact: []
+crosswalk:
+  ftc: Home Improvement/Contractor Scams
+  ic3: null
+  apwg: null
+typical_descriptions:
+- a contractor knocked and said they noticed my roof needs work
+- they said they were already working in the neighborhood
+- they want full payment in cash before starting, today only
+- they told me to pull the building permit myself
+narrative: 'A contractor who was not called shows up claiming to have
+
+  noticed a problem — often the roof, driveway, or gutters — and offers a
+
+  today-only price. The unsolicited claim of a problem is the same
+
+  structural tell as any other doorstep or phone scam. Red flags stack:
+
+  demanding full payment or a large deposit upfront, cash only, pressure
+
+  to decide today, and telling the homeowner to pull their own building
+
+  permit (a sign the contractor may be unlicensed). The protective moves
+
+  are always the same: get at least three estimates, look up the
+
+  contractor''s license, and never pay the full amount upfront.'
+response_template: 'A few things about this contractor are worth pausing
+
+  on: legitimate contractors don''t usually go door to door claiming to
+
+  have spotted a problem, and asking for full or large payment upfront in
+
+  cash, with a price that''s only good today, is a very common scam
+
+  pattern.
+
+
+  Please don''t pay anything or sign anything today. It''s worth getting
+
+  two or three other estimates and checking whether they''re a licensed
+
+  contractor before agreeing to any work.'
+forward_recommended_when: []
+escalation:
+  caregiver_notify: routine
+  cross_channel_correlate: false
+  log_as: contractor_redflag_attempt

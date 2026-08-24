@@ -1,0 +1,25 @@
+id: sig.detector.crypto_scam
+kind: signal
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/core/scam_patterns.py
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: migrated regex detector used by the email screening agent (seed v0)
+name: cryptocurrency or digital-wallet scam
+detection_mode:
+- artifact_only
+severity: high
+grounding: operational
+mechanisms: []
+short_rationale: cryptocurrency or digital-wallet scam
+detector: regex
+pattern_published: false
+pattern_note: >-
+  The regular expression backing this detector is not part of the public
+  release. Publishing it would let a bad actor test message text against
+  the exact pattern and rewrite around it. The signal's identity, severity,
+  and meaning are published so that references from archetypes resolve and
+  so that others can implement their own detector for the same signal.

@@ -1,0 +1,27 @@
+id: sig.platform.fake_gains
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: propublica_pig_butchering_2026
+  ref: https://www.propublica.org/article/whats-a-pig-butchering-scam-heres-how-to-avoid-falling-victim-to-one
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: A fake trading-app dashboard shows manufactured gains to justify larger deposits.
+    This signal is the older adult's VERBAL description of the experience ("the app shows
+    I made $4,000"). A screenshot-based forensic check on the dashboard itself would be a
+    separate artifact_only signal, per the grounding-discipline rule (MSA paper, section 9).
+    Do not blur the two.
+name: Described impossible or unverifiable investment gains in an app
+detection_mode:
+- verbal
+severity: high
+grounding: theory
+mechanisms:
+- mech.need_and_greed
+short_rationale: A small early "win" the senior is allowed to withdraw, followed by a trading
+  app that shows large, fast gains, is the manufactured proof that keeps the target depositing
+  more. The gains are never real; the app is controlled by the scammer.
+natural_probes:
+- Does the app or website show your money growing very quickly?
+- Were you able to withdraw any of your very first, small amount?

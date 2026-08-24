@@ -1,0 +1,23 @@
+id: sig.secrecy.dont_tell_family
+kind: signal
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_patterns.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: migrated from the MSA pattern library (seed v0)
+name: Request to keep it from family
+detection_mode:
+- verbal
+- artifact
+severity: critical
+grounding: theory
+mechanisms:
+- mech.social_compliance
+short_rationale: Real institutions never ask you to keep things from your loved ones.
+natural_probes:
+- Did they ask you not to tell anyone in the family?
+- Did they say it was just between the two of you?
+- Did they say to keep this confidential or private?

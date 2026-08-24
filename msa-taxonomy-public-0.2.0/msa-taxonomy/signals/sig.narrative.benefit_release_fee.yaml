@@ -1,0 +1,25 @@
+id: sig.narrative.benefit_release_fee
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: aarp_bereavement_scams_2026
+  ref: https://www.aarp.org/money/scams-fraud/funeral-bereavement/
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: A fee demanded to "release" life-insurance, pension, or benefit funds after a death
+    is a standard bereavement-scam mechanic.
+name: Told to pay a fee to release a benefit, pension, or insurance payout
+detection_mode:
+- verbal
+severity: high
+grounding: theory
+mechanisms:
+- mech.dishonesty_appeal
+short_rationale: Legitimate insurers, pension administrators, and benefit programs never require
+  an upfront fee to release funds a beneficiary is owed after a death. Any such demand is
+  a scam preying on the family's need for the funds.
+natural_probes:
+- Did they say you need to pay something before an insurance payout or benefit can be released?
+- Who told you a payment was needed first — an insurance company, the government, or someone
+  else?

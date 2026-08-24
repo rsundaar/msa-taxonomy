@@ -1,0 +1,96 @@
+id: arch.phantom_hacker
+kind: archetype
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: fbi_phoenix_phantom_hacker_2026
+  ref: https://www.fbi.gov/contact-us/field-offices/phoenix/news/press-releases/the-phantom-hacker-fbi-phoenix-warns-public-of-new-financial-scam
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: 'Phantom-hacker variants have drained $1B+ since 2024. Three-phase chained impersonation:
+    tech support, then a fake bank fraud department, then a fake government agency.'
+- source: ic3_tech_support_gov_impersonation_2026
+  ref: https://www.ic3.gov/crimeinfo/techsupportgovimpersonation
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: IC3 tech-support and government-impersonation crosswalk
+- source: forbes_phantom_hacker_2025
+  ref: https://www.forbes.com/sites/daveywinder/2025/07/26/fbi-confirms-phantom-hacker-warning-for-all-android-and-iphone-users/
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: corroborating description of the chained-caller structure
+name: Phantom hacker (multi-stage impersonation chain)
+canonical_signals:
+  verbal:
+  - sig.narrative.popup_lockout_claim
+  - sig.request.remote_access
+  - sig.narrative.move_money_to_protect_it
+  - sig.contact.multi_stage_chain
+  artifact:
+  - sig.detector.tech_support_scam
+crosswalk:
+  ftc: null
+  ic3: Tech Support Fraud / Government Impersonation
+  apwg: null
+typical_descriptions:
+- a pop-up said my computer was infected and gave me a number to call
+- Microsoft support asked to look at my computer
+- then someone from my bank's fraud department called about the same problem
+- they said my money wasn't safe and I needed to move it to protect it
+- then someone from the Federal Reserve called to confirm it
+narrative: 'Phantom hacker is three impersonations chained together, each one
+
+  making the last one seem more credible. It starts with a fake tech-support
+
+  contact — a pop-up or a call claiming the computer is infected — that asks
+
+  for remote access. Next, a "bank fraud department" calls, often naming the
+
+  first caller by way of confirmation, and says the protected user''s
+
+  accounts have been compromised and their money needs to be moved to a
+
+  "safe" account to protect it. No real bank, brokerage, or government
+
+  agency EVER tells someone to move their own money to protect it — that
+
+  instruction is itself the fraud. A third call, sometimes claiming to be a
+
+  government agency (the Federal Reserve or similar), may follow to make an
+
+  "alias account" or wire feel official.
+
+
+  The chain itself is the fingerprint: a legitimate institution does not
+
+  hand a customer between several separate callers "confirming" the same
+
+  story. Always ask whether anyone else has called about the same problem.'
+response_template: 'This matches a scam called the "phantom hacker" that has
+
+  cost people over a billion dollars. It usually starts with a fake computer
+
+  problem, then a second call pretending to be your bank''s fraud
+
+  department, and sometimes a third call pretending to be a government
+
+  agency — each one making the last seem more real.
+
+
+  No real bank or government agency ever tells you to move your money to
+
+  protect it. Please don''t move any money, and don''t give anyone remote
+
+  access to your computer. If you already did, let''s call your bank
+
+  directly on the number on your card right now, not any number you were
+
+  given.
+
+
+  They''ll likely call again, maybe claiming to be your bank or even the
+
+  police. Don''t answer — call the number on your card instead.'
+forward_recommended_when: []
+escalation:
+  caregiver_notify: urgent
+  cross_channel_correlate: true
+  log_as: phantom_hacker_chain_attempt

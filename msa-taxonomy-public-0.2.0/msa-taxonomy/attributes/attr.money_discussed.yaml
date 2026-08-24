@@ -1,0 +1,23 @@
+id: attr.money_discussed
+kind: attribute
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: propublica_pig_butchering_2026
+  ref: https://www.propublica.org/article/whats-a-pig-butchering-scam-heres-how-to-avoid-falling-victim-to-one
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Whether investing or crypto has come up yet with an unmet online contact, ahead of
+    any concrete money_ask. At this early stage the system asks rather than reaching a verdict.
+attribute_id: money_discussed
+order: 10
+severity: medium
+role: archetype_cue
+values:
+- 'yes'
+- 'no'
+- unknown
+multi: false
+describe: whether the new contact has brought up investing, crypto, or making money together,
+  even before any specific payment has been asked for
+probe: Has this person talked to you about investing or making money together?

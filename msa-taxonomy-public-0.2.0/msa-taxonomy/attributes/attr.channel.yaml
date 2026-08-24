@@ -1,0 +1,25 @@
+id: attr.channel
+kind: attribute
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_evidence.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: migrated from the hand-coded L1 evidence matrix (seed v0)
+attribute_id: channel
+order: 0
+severity: medium
+role: context
+values:
+- phone
+- email
+- text
+- mail
+- in_person
+- social
+- unknown
+multi: false
+describe: how the contact reached them
+probe: How did it reach you — a call, an email, a text, or a letter?

@@ -1,0 +1,31 @@
+id: sig.payment.crypto_atm
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: abc_news_crypto_atm_2025
+  ref: https://abcnews.com/US/scammers-notched-333-million-bitcoin-atm-scams-2025/story?id=128526877
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: '"The safety locker." $333-389M in 2025 crypto-ATM losses, 76% from victims aged 60+.
+    Distinct from sig.payment.crypto_transfer: this is the physical-world instruction to deposit
+    CASH into a kiosk.'
+- source: aarp_crypto_atm_laws_2026
+  ref: https://www.aarp.org/advocacy/crypto-atm-fraud-protections/
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: corroborating source on crypto-ATM fraud targeting older adults
+name: Instructed to deposit cash into a crypto ATM or kiosk
+detection_mode:
+- verbal
+severity: critical
+grounding: theory
+mechanisms:
+- mech.authority
+- mech.scarcity_urgency
+short_rationale: No bank, government agency, or utility ever directs payment through a bitcoin
+  ATM or kiosk. Any narrative (a "safety locker," a "federal safety account," a fraud-protection
+  deposit) that ends in cash going into a crypto machine is physical-world proof of a scam.
+natural_probes:
+- Did anyone tell you to put cash into a bitcoin or crypto machine, like one at a gas station
+  or convenience store?
+- Did they call it something like a "safety locker" or a "federal safety account"?

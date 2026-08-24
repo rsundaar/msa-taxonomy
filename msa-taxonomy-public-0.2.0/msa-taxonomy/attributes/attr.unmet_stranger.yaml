@@ -1,0 +1,23 @@
+id: attr.unmet_stranger
+kind: attribute
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: propublica_pig_butchering_2026
+  ref: https://www.propublica.org/article/whats-a-pig-butchering-scam-heres-how-to-avoid-falling-victim-to-one
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: 'The case-file question for stage 1 of investment grooming: the other party has never
+    been met in person.'
+attribute_id: unmet_stranger
+order: 9
+severity: medium
+role: archetype_cue
+values:
+- 'yes'
+- 'no'
+- unknown
+multi: false
+describe: whether the other party is someone the senior has never met in person (a recent
+  online contact, dating-app match, or "wrong number" text)
+probe: Have you met this person in person, or has it only been online or by phone?

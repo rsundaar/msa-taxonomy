@@ -1,0 +1,25 @@
+id: sig.narrative.verify_medicare_number
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: ftc_medicare_open_enrollment_2025
+  ref: https://consumer.ftc.gov/consumer-alerts/2025/09/medicare-open-enrollment-season-learn-how-protect-yourself-scams
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Medicare open enrollment runs Oct 15 to Dec 7, and "verify your Medicare number" calls
+    cluster in that window. Medicare never cold-calls to verify or ask for the Medicare number
+    (Medicare.gov, FTC).
+name: Unsolicited call asking to verify or confirm the Medicare number
+detection_mode:
+- verbal
+severity: high
+grounding: theory
+mechanisms:
+- mech.authority
+short_rationale: Medicare does not call unsolicited to "verify" a beneficiary's Medicare number.
+  A caller claiming to be Medicare and asking for or confirming that number is impersonating
+  the program.
+natural_probes:
+- Did they call you first, without you reaching out to them?
+- Did they ask you to confirm or read out your Medicare number?

@@ -1,0 +1,18 @@
+id: src.medicare
+kind: source
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/source_legitimacy.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: Medicare contacts you by mail. It does not call, email, or text out of the blue to
+    ask for your Medicare number or payment. (Medicare.gov; FTC.)
+label: Medicare
+aliases:
+- medicare
+never_channels:
+- email
+- text
+- social

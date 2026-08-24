@@ -1,0 +1,65 @@
+id: arch.medicare_enrollment
+kind: archetype
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: ftc_medicare_open_enrollment_2025
+  ref: https://consumer.ftc.gov/consumer-alerts/2025/09/medicare-open-enrollment-season-learn-how-protect-yourself-scams
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: Medicare open-enrollment season, Oct 15 to Dec 7. Verify-your-number calls, new or
+    updated card fees, junk-plan broker pressure.
+- source: elderlawanswers_medicare_scams_2026
+  ref: https://www.elderlawanswers.com/medicare-open-enrollment-scams-how-to-protect-yourself-21278
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: corroborating source on Medicare enrollment scam patterns
+name: Medicare enrollment scam (seasonal, Oct 15-Dec 7)
+canonical_signals:
+  verbal:
+  - sig.narrative.verify_medicare_number
+  - sig.narrative.new_medicare_card_fee
+  artifact: []
+crosswalk:
+  ftc: Medicare/Health Care Scams
+  ic3: Government Impersonation
+  apwg: null
+typical_descriptions:
+- someone called saying they needed to verify my Medicare number
+- they said I needed to pay for a new Medicare card
+- a broker kept pressuring me to switch my Medicare plan
+- they said my Medicare benefits would end if I didn't act today
+narrative: 'Medicare never calls unsolicited to verify a beneficiary''s
+
+  Medicare number, and it never charges for a new or replacement card —
+
+  cards are free and mailed automatically. During open enrollment
+
+  (October 15 - December 7), this family also includes aggressive brokers
+
+  pushing junk or unsuitable plans under time pressure. The deterministic
+
+  rule is simple: an unsolicited call claiming to be Medicare is a scam.
+
+  The protected move is always the same — hang up, and if there''s any
+
+  real question about Medicare, call 1-800-MEDICARE directly.'
+response_template: 'Medicare never calls you out of the blue to verify your
+
+  number, and a real Medicare card is always free — there''s never a fee.
+
+
+  Please don''t confirm your Medicare number or pay anything on that call.
+
+  If you want to check on anything Medicare-related, call 1-800-MEDICARE
+
+  yourself, not any number they gave you.
+
+
+  It''s Medicare season right now, so calls like this are common — if
+
+  anyone calls about your Medicare number again, it''s a scam.'
+forward_recommended_when: []
+escalation:
+  caregiver_notify: routine
+  cross_channel_correlate: true
+  log_as: medicare_enrollment_scam_attempt

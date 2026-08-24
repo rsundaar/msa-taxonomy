@@ -1,0 +1,84 @@
+id: arch.threat_extortion
+kind: archetype
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: ftc_sentinel_2025
+  ref: ftc_sentinel_2025
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: operational-category source cited by the seed library
+- source: ic3_2024
+  ref: ic3_2024
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: operational-category source cited by the seed library
+name: Threat to harm a loved one unless you pay (virtual kidnapping / extortion)
+canonical_signals:
+  verbal:
+  - sig.pressure.threat_of_harm
+  - sig.payment.crypto_transfer
+  - sig.payment.gift_cards
+  - sig.pressure.urgency_act_today
+  - sig.secrecy.dont_tell_family
+  artifact: []
+crosswalk:
+  ftc: Imposter Scams — Family Emergency / Extortion
+  ic3: Extortion / Virtual Kidnapping
+  apwg: null
+typical_descriptions:
+- someone called and said they have my grandson and will hurt him if I don't pay
+- a man said my granddaughter was kidnapped and I had to send money right now
+- they threatened to hurt my grandson unless I paid them in bitcoin
+- a caller said he would hurt my son if I didn't pay, and not to call the police
+narrative: 'A caller (or a text) claims to have a loved one, or threatens to harm
+
+  one, unless the protected user pays immediately. This differs from the
+
+  grandchild-impersonation scam: here the caller is a stranger who
+
+  claims to HAVE the grandchild, not someone pretending to BE the
+
+  grandchild. The hallmarks are a threat of harm, extreme urgency, a
+
+  demand for untraceable payment (bitcoin, gift cards, or wire), an
+
+  instruction not to call anyone, and often personal details (a name, a
+
+  school) lifted from social media to sound convincing. Sometimes the
+
+  caller plays a generic crying or screaming voice in the background.
+
+
+  The decisive fact is almost always that the protected user has NOT
+
+  actually reached the loved one. The single most powerful move is to
+
+  verify independently: hang up and call the loved one directly on a
+
+  number already saved. The loved one is nearly always safe and unaware.'
+response_template: 'I''m so sorry, that is a frightening thing to hear, and it has the
+
+  marks of a scam that targets families. People do this by claiming to
+
+  have your grandson so you''ll pay before you have a chance to think.
+
+
+  The most important thing right now is to check on him yourself. Please
+
+  hang up and call your grandson directly on a number you already have
+
+  saved, not any number this caller gave you. If you can''t reach him,
+
+  call another family member who can.
+
+
+  Please do not send any money, no bitcoin and no gift cards, and do not
+
+  follow the caller''s instructions. Almost always the grandson is safe
+
+  and has no idea this call happened. I''ll stay with you while you check.'
+forward_recommended_when: []
+escalation:
+  caregiver_notify: urgent
+  cross_channel_correlate: true
+  log_as: elder_financial_exploitation_attempt

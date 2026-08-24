@@ -1,0 +1,21 @@
+id: src.ssa
+kind: source
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/source_legitimacy.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: The Social Security Administration contacts you by mail. It never suspends your Social
+    Security number, never demands payment by gift card or wire, and never threatens arrest.
+    (SSA Office of the Inspector General; FTC.)
+label: Social Security
+aliases:
+- social security
+- ssa
+- social security administration
+never_channels:
+- email
+- text
+- social

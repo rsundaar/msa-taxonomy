@@ -1,0 +1,29 @@
+id: sig.grooming.investment_mentor
+kind: signal
+version_added: 0.2.0
+version_deprecated: null
+preview: false
+provenance:
+- source: propublica_pig_butchering_2026
+  ref: https://www.propublica.org/article/whats-a-pig-butchering-scam-heres-how-to-avoid-falling-victim-to-one
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: The "mentor" phase, casual wealth display followed by an offer to teach crypto trading,
+    is the defining middle stage of the pig-butchering arc.
+- source: fraud_codex_pig_butchering_2026
+  ref: https://www.thefraudcodex.com/codex/pig-butchering
+  retrieved_at: '2026-07-12T00:00:00Z'
+  note: corroborating description of the wealth-display + mentoring pattern
+name: New contact displays wealth and offers to mentor in crypto/investing
+detection_mode:
+- verbal
+severity: high
+grounding: theory
+mechanisms:
+- mech.liking
+- mech.need_and_greed
+short_rationale: A relatively new contact casually shows off trading success and offers to
+  teach the senior how to invest, building both affection and the hope of easy profit before
+  any money changes hands.
+natural_probes:
+- Has this person talked about how much money they've made investing or trading?
+- Have they offered to teach you or help you get started investing?

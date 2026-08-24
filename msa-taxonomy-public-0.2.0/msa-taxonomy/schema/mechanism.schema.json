@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sahai-knowledge/mechanism.schema.json",
+  "title": "Persuasion mechanism (MSA Level 1)",
+  "type": "object",
+  "required": ["name", "theory", "source_principle", "description"],
+  "properties": {
+    "kind": {"const": "mechanism"},
+    "name": {"type": "string", "minLength": 1},
+    "theory": {"type": "string", "minLength": 1},
+    "source_principle": {"type": "string", "minLength": 1},
+    "description": {"type": "string", "minLength": 1}
+  }
+}

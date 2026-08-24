@@ -1,0 +1,33 @@
+id: sig.pressure.threat_of_arrest
+kind: signal
+version_added: 0.1.0
+version_deprecated: null
+preview: false
+provenance:
+- source: sahai-seed
+  ref: code/data/triage_patterns.yaml
+  retrieved_at: '2026-07-09T00:00:00Z'
+  note: migrated from the MSA pattern library (seed v0)
+name: Threat of arrest, lawsuit, or loss of benefits
+detection_mode:
+- verbal
+- artifact
+severity: critical
+grounding: ungrounded_pending_review
+mechanisms: []
+short_rationale: Real agencies do not threaten immediate arrest, a lawsuit, deportation, or
+  loss of benefits over the phone to force a payment. A threat of legal consequences to make
+  you act right now is a hallmark of a government-impersonation scam.
+natural_probes:
+- Did they threaten to arrest you, sue you, or take away your benefits?
+- Did they say there was a warrant out, or that police were on the way?
+- Did they say it would all go away if you paid or confirmed your information today?
+notes: 'Like sig.pressure.threat_of_harm, coercion by fear does not map cleanly
+
+  onto the Cialdini / Stajano-Wilson persuasion taxonomies, so grounding
+
+  is ungrounded_pending_review pending fraud-researcher review. The decisive
+
+  tell is that a legitimate agency does not threaten arrest by phone to
+
+  extract a same-day payment.'

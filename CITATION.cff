@@ -11,7 +11,7 @@ version: 0.2.0
 date-released: 2026-08-19
 license: CC-BY-4.0
 repository-code: "https://github.com/rsundaar/msa-taxonomy"
-# doi: "10.5281/zenodo.REPLACE-ME"   # Zenodo mints this on first release; add it, then re-tag
+doi: "10.5281/zenodo.22085666"   # Zenodo mints this on first release; add it, then re-tag
 abstract: >-
   A versioned, machine-readable taxonomy of the manipulation tactics used in
   fraud against older adults. Organised in three levels: mechanisms (the

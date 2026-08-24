@@ -4,6 +4,8 @@
 
 Version 0.2.0 · Licensed CC BY 4.0 · Published by Sahai LLC
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22085666.svg)](https://doi.org/10.5281/zenodo.22085666)
+
 ---
 
 ## What this is
